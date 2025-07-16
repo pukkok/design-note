@@ -1,0 +1,29 @@
+@import url('reset.css');
+@import url('circle.css');
+@import url('line.css');
+
+header {
+  border-bottom: 1px solid black;
+  padding: 10px 0;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.circle-section {
+  width: 100%;
+  height: 160vh;
+  position: relative;
+  top: 0;
+  background: #000;
+}
+
+.image-mask {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('../assets//pig-play.png') center/cover no-repeat;
+  clip-path: circle(150px at right 8% top 50%);
+  transition: clip-path 0.8s ease;
+}

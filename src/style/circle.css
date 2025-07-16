@@ -1,0 +1,44 @@
+.wave{
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wave .blue-ball{
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+  border-radius: 50%;
+  position: relative;
+}
+
+.wave .blue-ball::before{
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  animation: bluewave 2s infinite;
+  background-color: blue;
+  border-radius: 50%;
+}
+
+@keyframes bluewave {
+  0% {
+    width: 120%;
+    height: 120%;
+    opacity: 0.1;
+  }
+  
+  100% {
+    width: 160%;
+    height: 160%;
+    opacity: 0;
+  }
+}

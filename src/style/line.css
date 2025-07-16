@@ -1,0 +1,64 @@
+.blur-cover {
+  width: 100px;
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+}
+
+.vertical-text {
+  display: flex;
+  animation: scrollUp 7s linear infinite;
+  writing-mode: vertical-rl;
+}
+
+.vertical-text p {
+  font-size: 60px;
+  margin: 0;
+  padding: 40px 0;
+}
+
+.blur-cover::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  z-index: 10;
+
+  /* background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.3) 20%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  ); */
+}
+
+.blur-cover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 30%;
+  width: 100%;
+  pointer-events: none;
+  z-index: 10;
+
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  backdrop-filter: blur(6px);
+}
+
+/* 위로 스크롤 애니메이션 */
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
