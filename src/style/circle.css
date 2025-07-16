@@ -1,20 +1,23 @@
-.wave{
+.blue-ball{
+  --blue-color: rgb(75, 75, 230);
+  
   width: 300px;
   height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.wave .blue-ball{
-  width: 200px;
-  height: 200px;
-  background-color: blue;
+  background-color: var(--blue-color);
   border-radius: 50%;
   position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
 }
 
-.wave .blue-ball::before{
+.blue-ball::before{
   content: '';
   display: block;
   width: 0;
@@ -25,8 +28,9 @@
   left: 50%;
   top: 50%;
   animation: bluewave 2s infinite;
-  background-color: blue;
+  background-color: var(--blue-color);
   border-radius: 50%;
+  pointer-events: none;
 }
 
 @keyframes bluewave {
@@ -41,4 +45,61 @@
     height: 160%;
     opacity: 0;
   }
+}
+
+.blue-ball p.index {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.blue-ball h2 {
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
+.blue-ball p.common {
+  font-size: 15px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.blue-ball p.common span {
+  width: 1px;
+  height: 50%;
+  background-color: #ad96ff;
+}
+
+.blue-ball .button-box{
+  display: flex;
+}
+
+.blue-ball .button-box button {
+  background-color: #fff;
+  color: var(--blue-color);
+  font-size: 14px;
+  width: 55px;
+  display: flex;
+  justify-content: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 0.7rem;
+}
+
+.blue-ball .button-box button:nth-child(1) {
+  padding-left: 8px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.blue-ball .button-box span {
+  width: 1px;
+  height: 0.7rem;
+  background-color: #ad96ff;
+}
+
+.blue-ball .button-box button:nth-child(3) {
+  padding-right: 8px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
